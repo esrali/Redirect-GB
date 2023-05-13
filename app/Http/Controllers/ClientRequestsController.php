@@ -95,7 +95,7 @@ class ClientRequestsController extends Controller
             $attributes['hospital_id'] = $request->hospitalId;
         }
         //check the get document
-        if ($request->typeOfRequest == 'Get') {
+        if ($request->typeOfRequest == 'Request') {
             $name =  $request->document->getClientOriginalName();
             $uploadedFile =  $request->file('document');
             $uploadedFile->move('upload/files/', $name);
@@ -170,13 +170,18 @@ class ClientRequestsController extends Controller
                     }
                 }
             }elseif (Auth()->user()->role == 'Commissary') {
+                //if($request->code == $cleintRequest->code){  }esle{ secret code is wrong }
                 $data = $request->only(['note', 'state']);
-                $cleintRequest->update($data);
-                if ($cleintRequest->type_of_request == 'Request' && $cleintRequest->state == 'Success'){
+                if ($cleintRequest->type_of_request == 'Request' && $request->state == 'Success'){
                     $bank = Bank::where('hospital_id' , Null)->where('type' , $cleintRequest->type_of_blood)->first();
                     $newAmount =  $bank->amount - $cleintRequest->amount ;
-                    $bank->update(['amount' => $newAmount]);
+                    if($newAmount < 0){
+                        $data['state'] == 'Pending';
+                    }else{
+                        $bank->update(['amount' => $newAmount]);
+                    }
                 }
+                $cleintRequest->update($data);
             }
         }
         elseif( $cleintRequest->way=='Hospital'){

@@ -28,14 +28,14 @@
                                             <i class="fa-solid fa-droplet fa-lg me-3 fa-fw mt-2"></i>
                                             <select class="form-select mb-lg-4 mb-4" id="inputGroupSelect01" name="typeOfBlood" required >
                                                 <option selected>Enter Your Type Of Blood </option>
-                                                <option value="1">A-positive (A+)</option>
-                                                <option value="2">A-negative (A-)</option>
-                                                <option value="3">B-positive (B+)</option>
-                                                <option value="3">B-negative (B-)</option>
-                                                <option value="3">AB-positive (AB+)</option>
-                                                <option value="3">AB-negative (AB-)</option>
-                                                <option value="3">O-positive (O+)</option>
-                                                <option value="3">O-negative (O-)</option>
+                                                <option value="A+">A-positive (A+)</option>
+                                                <option value="A-">A-negative (A-)</option>
+                                                <option value="B+">B-positive (B+)</option>
+                                                <option value="B-">B-negative (B-)</option>
+                                                <option value="AB+">AB-positive (AB+)</option>
+                                                <option value="AB-">AB-negative (AB-)</option>
+                                                <option value="O+">O-positive (O+)</option>
+                                                <option value="O-">O-negative (O-)</option>
                                             </select>
                                         </div>
                                         <div class="d-flex flex-row align-items-center mb-4">

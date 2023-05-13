@@ -53,6 +53,11 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="ms-4 mt-4">
+                                    <a href="{{asset('upload/files/'.$request->document)}}" target="blank">View Document</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="ms-4 mt-4">
                                     <h6>State : {{$request->state}} </h6>
                                 </div>
                             </div>

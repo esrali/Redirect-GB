@@ -45,7 +45,7 @@
                                     <div class="form-group">
                                         <label for="user.service" class="form-control-label">Tester</label>
                                         <div class="@error('user.service')border border-danger rounded-3 @enderror">
-                                            <select name="tester_id" class="form-control" required >
+                                            <select name="tester_id" class="form-control"  >
                                             @if (isset($request->tester_id))
                                                 <option value="{{$request->tester_id}}"> {{$request->tester->user->name}} </option>
                                             @else    
@@ -148,6 +148,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="request-name" class="form-control-label">Secret Code</label>
+                                        <div class="@error('request.name')border border-danger rounded-3 @enderror">
+                                            <input class="form-control" value="" type="number" placeholder="Note About The Request" id="Note " name="note"  >
+                                                @error('name')
+                                                    <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                                @enderror
+                                        </div>
+                                    </div>
+                                </div> -->
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="user.service" class="form-control-label">State</label>
