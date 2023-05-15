@@ -16,7 +16,7 @@ use App\Http\Controllers\SessionsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
-
+// hello
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,10 +51,10 @@ Route::group(['middleware' => 'CheckClient' ], function () {
 
 
 	Route::resource('/users', UserController::class);
-	
+
 	Route::resource('/clients', ClientController::class);
 	Route::get('clients/remove/{id}', [ClientController::class,  'removeClient']);
-	
+
 	Route::resource('/admins', AdminController::class);
 	Route::get('admins/remove/{id}', [AdminController::class,  'removeAdmin']);
 
